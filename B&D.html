@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYM</title>
+    <style>
+        /* Body and Background */
+body {
+    background-image: url(/gym/bg.jpeg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-color: black;
+    position: absolute;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Header and Navigation */
+header {
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    font-size: large;
+    animation: fadeInSlideDown 1.5s ease-in-out forwards;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #fffb00;
+}
+
+/* Animated underline effect for navigation links */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fffb00;
+    transition: width 0.4s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Header Text */
+.header-text {
+    margin-top: 20%;
+    margin-left: 30px;
+    color: #fff;
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    animation: fadeInSlideUp 2s ease-out forwards;
+}
+
+.header-text h1 span {
+    color: #fffb00;
+    animation: colorChange 1.5s infinite alternate;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInSlideDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInSlideUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes colorChange {
+    0% { color: #fffb00; }
+    100% { color: #00fffc; }
+}
+
+/* About Section */
+#about {
+    padding: 80px 0;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.about-col-1, .about-col-2 {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-col-1 img {
+    width: 80%;
+    padding-top: 10%;
+    padding-left: 15%;
+    animation: scaleIn 2s ease-in-out;
+}
+
+.sub-title {
+    font-size: 60px;
+    color: #fff;
+    padding-top: 90%;
+    animation: slideInLeft 1s ease-out;
+}
+
+/* Animations */
+@keyframes scaleIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Services Section */
+.section-services {
+    text-align: center;
+    color: #fff;
+    padding: 50px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.section-services h2 {
+    font-size: 60px;
+    color: #fffb00;
+    
+}
+
+.fe {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+.fe li {
+    background-color: #fffb00;
+    font-size: large;
+    color: black;
+    padding: 20px;
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
+    animation: scaleIn 1s ease-in-out;
+}
+
+.fe li:hover {
+    transform: scale(1.1);
+}
+
+/* Slider */
+.slider {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    animation: slideAnimation 10s infinite;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+@keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+/* Classes Section */
+.classes {
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    font-size: larger;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Trainer Section */
+.section-trainers {
+    color: #fff;
+}
+
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+.about, .services, .classes, .trainers, .contact {
+    margin: 20px 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    box-shadow: 0 0 10px #fffb00;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+  /* Media Query for Mobile View */
+  @media screen and (max-width: 768px) {
+            .header-text h1 {
+                font-size: 36px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .fe li {
+                width: 100%;
+            }
+
+            .about-col-1 img {
+                width: 100%;
+                padding: 5%;
+            }
+
+            .sub-title {
+                font-size: 32px;
+            }
+
+            .section-services h2 {
+                font-size: 32px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#trainers">Trainers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="header-text">
+        <h1>Welcome to <span>Body Workout</span><br>Fitness & Spa</h1>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-col-1" style="margin-top: 35%;">
+            <img src="/gym/col-1.jpeg" alt="Gym Image">
+        </div>
+        <div class="about-col-2">
+            <h1 class="sub-title">Ab<span style="color: #fffb00;">out</span></h1>
+            <p>Welcome to Body Workout Fitness & Spa! We are a state-of-the-art fitness facility <br>
+             dedicated to helping you reach your fitness goals. Our gym offers a wide range of world-class <br>
+             training options, group classes, and personalized coaching sessions tailored to all fitness levels. <br>
+             Whether you’re a beginner or an advanced athlete, our experienced trainers and welcoming <br>
+             environment will support and challenge you every step of the way.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-services">
+        <h2><span style="color: #fff;">Our</span> <span class="cl">Services</span></h2>
+        <ul class="fe">
+            <li>Personal Training</li>
+            <li>Group Classes</li>
+            <li>Nutrition Advice</li>
+            <li>Yoga and Meditation</li>
+            <li>Strength Training</li>
+        </ul>
+    </section>
+
+    <!-- Slider Section -->
+    <div class="slider">
+        <div class="slides">
+            <img src="/gym/img1.jpg" alt="Image 1">
+            <img src="/gym/img2.jpg" alt="Image 2">
+            <img src="/gym/img3.jpg" alt="Image 3">
+            <img src="/gym/img4.jpg" alt="Image 4">
+            <img src="/gym/img5.jpg" alt="Image 5">
+        </div>
+    </div>
+
+    <!-- Classes Section -->
+    <section id="classes" class="classes">
+        <h2 style="font-size: 50px;"><span style="color: #fffb00;" >Classes</span> We Offer</h2>
+        <p>Join our various classes designed for all fitness levels, from beginners to pros.</p>
+    </section>
+     <!-- Trainers Section -->
+     <section id="trainers" class="section-trainers" style="text-align: center;">
+        <h2 style="font-size: 50px;">Meet <span style="color: #fffb00;">Our Trainers</span></h2>
+        <p>Our certified trainers are here to help you with customized workout plans and expert advice.</p>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <h2 style="color: #fff; font-size: 50px;"><span style="color: #fffb00;">Contact</span> Us</h2>
+        <form class="contact-form" action="https://formspree.io/f/mnnqjoab" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="mobile" placeholder="Your Mobile Number" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" style="margin: 10px; padding: 10px; background-color: #fffb00; border-radius: 30px;">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Body Workout Gym. All rights reserved.</p>
+    </footer>
+
+
+    <!-- JavaScript for Slider -->
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slides img");
+        const slideInterval = setInterval(showNextSlide, 3000);
+
+        function showNextSlide() {
+            slides[currentIndex].style.display = "none";
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].style.display = "block";
+        }
+    </script>
+</body>
+</html>
